@@ -64,29 +64,29 @@ public class Main {
         Jinna.start();
     }
 }
-Explanation
-This program defines two main classes, Cooker and RobotArm, each implementing the Runnable interface to enable multi-threading.
+#Explanation
+--This program defines two main classes, Cooker and RobotArm, each implementing the Runnable interface to enable multi-threading.
 
-Cooker Class
-The Cooker class simulates the process of creating popcorn bags. The run method in this class:
+#Cooker Class
+--The Cooker class simulates the process of creating popcorn bags. The run method in this class:
 
-Uses a while (true) loop to continuously create popcorn bags.
-Checks if the outputBin queue has reached its maximum capacity (max_size).
-If the queue is full, it waits until notified by the RobotArm thread.
-Adds a new PopCornBag to the outputBin and notifies all waiting threads.
-RobotArm Class
-The RobotArm class simulates the process of removing popcorn bags from the outputBin. The run method in this class:
+--Uses a while (true) loop to continuously create popcorn bags.
+--Checks if the outputBin queue has reached its maximum capacity (max_size).
+--If the queue is full, it waits until notified by the RobotArm thread.
+--Adds a new PopCornBag to the outputBin and notifies all waiting threads.
+#RobotArm Class
+--The RobotArm class simulates the process of removing popcorn bags from the outputBin. The run method in this class:
 
-Uses a while (true) loop to continuously remove popcorn bags.
-Checks if the outputBin queue is empty.
-If the queue is empty, it waits until notified by the Cooker threads.
-Removes a PopCornBag from the outputBin and notifies all waiting threads.
-main Method
-The main method initializes and starts three threads:
+--Uses a while (true) loop to continuously remove popcorn bags.
+--Checks if the outputBin queue is empty.
+--If the queue is empty, it waits until notified by the Cooker threads.
+--Removes a PopCornBag from the outputBin and notifies all waiting threads.
+#main Method
+--The main method initializes and starts three threads:
 
-Two Cooker threads (Raju and Jinna).
-One RobotArm thread (zx101).
-These threads run concurrently, simulating the continuous production and removal of popcorn bags in the dispenser.
+--Two Cooker threads (Raju and Jinna).
+--One RobotArm thread (zx101).
+--These threads run concurrently, simulating the continuous production and removal of popcorn bags in the dispenser.
 
-Note
-Ensure the PopCornBag class is defined elsewhere in your project, as it is used in the Cooker class but not defined in the provided code.
+#Note
+--Ensure the PopCornBag class is defined elsewhere in your project, as it is used in the Cooker class but not defined in the provided code.
